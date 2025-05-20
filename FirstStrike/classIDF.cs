@@ -3,10 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FirstStrike.Models;
 
-namespace FirstStrike
+namespace FirstStrike.Models
 {
-    internal class classIDF
+    public class IDF
     {
+        private string DOE;
+        private string CurrentCommander;
+        private List<StrikeOption> StrikeOptions;
+
+        public IDF(string doe, string currentCommander)
+        {
+            DOE = doe;
+            CurrentCommander = currentCommander;
+        }
     }
 }
