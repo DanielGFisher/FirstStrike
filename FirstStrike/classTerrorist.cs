@@ -30,11 +30,11 @@ namespace FirstStrike.Models
             set { Alive = value; }
         }
 
-        private string _Location;
-        public string Location
+        private string _Place;
+        public string Place
         {
-            get { return _Location; }
-            set { Location = value; }
+            get { return _Place; }
+            set { Place = value; }
         }
 
         private List<string> _Weapons;
@@ -44,14 +44,22 @@ namespace FirstStrike.Models
             set { Weapons = value; }
         }
 
+        static private List<string> _Places = new List<string> { "Outside", "In A Car", "Home" };
+        static public List<string> Places
+        {
+            get { return _Places; }
+            set { Places = value; }
+        }
 
-        public Terrorist(string name, int rank, bool alive, List<string> weapons, string location)
+
+
+        public Terrorist(string name, int rank, bool alive, List<string> weapons, string place)
         {
             _Name = name;
             _Rank = rank;
             _Alive  = alive;
             _Weapons = weapons;
-            _Location = location;
+            _Place = place;
         }
 
         public void Info()
@@ -74,6 +82,11 @@ namespace FirstStrike.Models
                 }
             }
             return weapons;
+        }
+        public void Move()
+        {
+            Random Rand = new Random();
+            _Place = Places.ElementAt(Rand.Next(0, Places.Count));
         }
     }
 }
