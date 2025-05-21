@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FirstStrike.Models;
 
-namespace FirstStrike
+namespace FirstStrike.Models
 {
     public class Aman
     {
-        public string AreaDate = Convert.ToString(DateTime.Now);
-        public static void Aman(classTerrorist terrorist)
+        public static void Intelligence(Terrorist terrorist)
         {
-            Console.WriteLine($"Name: {terrorist.Name}\nRank: {terrorist.Rank}\nStatus: {terrorist.Status}\nWeapons: {terrorist.GetWeapons());}Time: " + AreaDate); // Add weapons
+            Console.WriteLine($"Name: {terrorist.Name}\nRank: {terrorist.Rank}\nStatus: {terrorist.Alive}\nWeapons: {terrorist.GetWeapons()}Time: " + Convert.ToString(DateTime.Now));
         }
     }
 }
