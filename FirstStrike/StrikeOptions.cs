@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace FirstStrike.Models
 {
-    public class StrikeOption
+    public abstract class StrikeOption
     {
-        public string Name;
-        public int AmmoCap;
-        public double FuelSupply;
-        public string TargetType;
+        public string Name { get; set; }
+        public int AmmoCapacity { get; set; }
+        public double FuelSupply { get; set; }
+        public List<string> TargetType { get; set; }
 
-        public StrikeOption(string name, int ammo, double fuel, string targetType)
+        public StrikeOption(string name, int ammo, double fuelsupply, List<string> targets)
         {
             Name = name;
-            AmmoCap = ammo;
-            FuelSupply = fuel;
-            TargetType = targetType;
+            AmmoCapacity = ammo;
+            FuelSupply = fuelsupply;
+            TargetType = targets;
         }
-
+        public abstract void StrikeOperation();
         public void Description()
         {
-            Console.WriteLine($"Type: {Name}\nMunition Capacity: {AmmoCap}\nFuel Gauge: {FuelSupply}\nSpecialty Target: {TargetType}");
+            Console.WriteLine($"Type: {Name}\nMunition Capacity: {AmmoCapacity}\nFuel Gauge: {FuelSupply}\nSpecialty Target: {TargetType}");
         }
     }
 }
