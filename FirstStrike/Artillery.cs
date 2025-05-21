@@ -11,7 +11,7 @@ namespace FirstStrike.Models
         public string BombType;
         public string EffectiveAgainst;
         public List<int> StrikeCapacity;
-        public Artillery(string pilot) : base("M109", 40, 100.00, new List<string> { "Buildings", "Vehicles", "Personnel", "Open Area" })
+        public Artillery() : base("M109", 40, 100.00, new List<string> { "Buildings", "Vehicles", "Personnel", "Open Area" })
         {
             BombType = "Explosive-Shells";
             EffectiveAgainst = "Open-Space";
@@ -20,7 +20,7 @@ namespace FirstStrike.Models
 
         public override void StrikeOperation()
         {
-            Console.WriteLine($"Drone -- {Name} --\nExecuting Operation:\nTarget struck successfully!");
+            Console.WriteLine($"Drone -- {Name} --\nExecuting Operation:\nUsing - {BombType} -\nTarget struck successfully!");
             AmmoCapacity--;
         }
     }
