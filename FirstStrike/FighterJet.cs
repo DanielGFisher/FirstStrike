@@ -17,12 +17,13 @@ namespace FirstStrike.Models
             Operator = pilot;
             BombType = new List<string> { "1 Tonne", "Half Tonne" };
             EffectiveAgainst = "Building";
+            StrikeCapacity = 1;
         }
 
         public override void StrikeOperation()
         {
             Console.WriteLine($"Fighter -- {Name} -- Piloted by -- {Operator} --\nExecuting Operation:\nTarget struck successfully!");
-            StrikeCapacity--;
+            AmmoCapacity--;
         }
     }
 }
