@@ -24,7 +24,9 @@ namespace FirstStrike.Models
         {
             Console.WriteLine($"Fighter -- {Name} -- Piloted by -- {Operator} --\nExecuting Operation:\nTarget struck successfully!");
             AmmoCapacity--;
+            FuelSupply -= 50;
         }
+
         public void Refuel(double fuel)
         {
             double remainder = 0;
@@ -43,11 +45,11 @@ namespace FirstStrike.Models
         {
             int remainder = 0;
             int original = StrikeCapacity;
-            if ((ammo + original) <= 3 && ammo > 0) AmmoCapacity += ammo;
-            else if ((ammo + original) > 3)
+            if ((ammo + original) <= 8 && ammo > 0) AmmoCapacity += ammo;
+            else if ((ammo + original) > 8)
             {
-                StrikeCapacity += (3 - original);
-                ammo -= (3 - original);
+                StrikeCapacity += (8 - original);
+                ammo -= (8 - original);
                 remainder = ammo;
                 Console.WriteLine($"You've refueled to max capacity,  your remaining fuel is {remainder}");
             }
