@@ -22,8 +22,9 @@ namespace FirstStrike
             get { return _Weapons; }
             set { Weapons = value; }
         }
-        public static void GenerateTerrorists(Hamas Organization, int HowMany)
+        public static Hamas GenerateTerrorists(int HowMany)
         {
+            Hamas Organization = new Hamas();
             Random Rand = new Random();
             for (int i = 0; i < HowMany; i++)
             {
@@ -46,6 +47,7 @@ namespace FirstStrike
                 Terrorist trr = new Terrorist(name, rank, alive, weapons, place);
                 Organization.AddMember(trr);
             }
+            return Organization;
         }
     }
 }
