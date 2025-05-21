@@ -67,6 +67,7 @@ namespace FirstStrike.Models
             string weapons = "";
             for (int i = 0; i < Weapons.Count; i++)
             {
+                weapons += "    ";
                 weapons += Weapons.ElementAt(i);
                 if (i < Weapons.Count -1)
                 {
