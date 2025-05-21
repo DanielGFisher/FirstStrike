@@ -16,9 +16,12 @@ namespace FirstStrike.Models
             FighterJet F16 = new FighterJet(pilot);
             Drone Hermes = new Drone();
             Artillery M1902 = new Artillery();
-            IsraeliDefenceForce.AddStrikeOption(IsraeliDefenceForce, Hermes);
 
-        } 
+            IsraeliDefenceForce.AddStrikeOption(F16);
+            IsraeliDefenceForce.AddStrikeOption(Hermes);
+            IsraeliDefenceForce.AddStrikeOption(M1902);
+
+        }
 
 
     }

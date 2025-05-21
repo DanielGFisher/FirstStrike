@@ -11,7 +11,7 @@ namespace FirstStrike.Models
     {
         private string DOE;
         private string CurrentCommander;
-        private List<StrikeOption> StrikeOptions = new List<StrikeOption>();
+        public List<StrikeOption> StrikeOptions = new List<StrikeOption>();
 
         public IDF(string doe, string currentCommander)
         {
@@ -19,9 +19,9 @@ namespace FirstStrike.Models
             CurrentCommander = currentCommander;
         }
 
-        public static void AddStrikeOption(IDF iDF, StrikeOption strikeOption)
+        public void AddStrikeOption(StrikeOption warMachine)
         {
-            iDF.StrikeOptions.Add(strikeOption);
+            StrikeOptions.Add(warMachine);
         }
     }
 }
