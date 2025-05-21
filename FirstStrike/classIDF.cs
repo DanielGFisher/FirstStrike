@@ -11,12 +11,17 @@ namespace FirstStrike.Models
     {
         private string DOE;
         private string CurrentCommander;
-        private List<StrikeOption> StrikeOptions;
+        private List<StrikeOption> StrikeOptions = new List<StrikeOption>();
 
         public IDF(string doe, string currentCommander)
         {
             DOE = doe;
             CurrentCommander = currentCommander;
+        }
+
+        public static void AddStrikeOption(IDF iDF, StrikeOption strikeOption)
+        {
+            iDF.StrikeOptions.Add(strikeOption);
         }
     }
 }
