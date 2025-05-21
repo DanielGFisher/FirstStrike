@@ -11,7 +11,7 @@ namespace FirstStrike
         public string AreaDate = Convert.ToString(DateTime.Now);
         public static void Aman(Terrorist terrorist)
         {
-            Console.WriteLine($"Name: {Name}\nRank: {Rank}\nStatus: {Status}\nWeapons: {String.Join(",", Weapons);}Time: " + AreaDate); // Add weapons
+            Console.WriteLine($"Name: {terrorist.Name}\nRank: {terrorist.Rank}\nStatus: {terrorist.Status}\nWeapons: {terrorist.GetWeapons());}Time: " + AreaDate); // Add weapons
         }
     }
 }
