@@ -7,7 +7,7 @@ namespace FirstStrike
     {
         public static void Main(string[] args)
         {
-
+            CommanderConsole.Menu();
         }
     }
 }
