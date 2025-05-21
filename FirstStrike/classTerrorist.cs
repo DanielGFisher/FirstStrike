@@ -62,5 +62,18 @@ namespace FirstStrike.Models
                 Console.WriteLine($"    {weapon}");
             }
         }
+        public string GetWeapons()
+        {
+            string weapons = "";
+            for (int i = 0; i < Weapons.Count; i++)
+            {
+                weapons += Weapons.ElementAt(i);
+                if (i < Weapons.Count -1)
+                {
+                    weapons += "\n";
+                }
+            }
+            return weapons;
+        }
     }
 }
