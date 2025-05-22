@@ -20,7 +20,7 @@ namespace FirstStrike.Models
             FuelSupply = fuelsupply;
             TargetType = targets;
         }
-        public abstract void StrikeOperation();
+        public abstract void StrikeOperation(Terrorist terrorist);
         public void Description()
         {
             Console.WriteLine($"Type: {Name}\nMunition Capacity: {AmmoCapacity}\nFuel Gauge: {FuelSupply}\nSpecialty Target: {TargetType}");
