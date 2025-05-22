@@ -16,7 +16,7 @@ namespace FirstStrike
             set { Names = value; }
         }
 
-        static private List<string> _Weapons = new List<string> { "AK47", "M16", "Knife", "Rock", "Bomb", "Hands" };
+        static private List<string> _Weapons = new List<string> { "AK47", "M16", "Knife", "Gun"};
         static public List<string> Weapons
         {
             get { return _Weapons; }
