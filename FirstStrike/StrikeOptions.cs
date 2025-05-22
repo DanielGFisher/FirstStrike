@@ -13,6 +13,8 @@ namespace FirstStrike.Models
         public double FuelSupply { get; set; }
         public List<string> TargetType { get; set; }
 
+        public List<string> EffectiveAgainst;
+
         public StrikeOption(string name, int ammo, double fuelsupply, List<string> targets)
         {
             Name = name;

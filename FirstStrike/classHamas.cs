@@ -10,38 +10,32 @@ namespace FirstStrike.Models
 {
     public class Hamas
     {
-        private string _DateOfFormation;
-        public string DateOfFormation
-        {
-            get { return _DateOfFormation; }
-            set { DateOfFormation = value; }
-        }
+        public string DateOfFormation;
 
-        private Terrorist _CurrentCommander = null;
-        public Terrorist CurrentCommander
-        {
-            get { return _CurrentCommander; }
-            set { CurrentCommander = value; }
-        }
+        public Terrorist CurrentCommander = null;
 
-        private List<Terrorist> _Members;
-        public List<Terrorist> Members
-        {
-            get { return _Members; }
-            set { Members = value; }
-        }
+        public List<Terrorist> Members;
         public Hamas()
         {
-            _DateOfFormation = "19/08/1989";
+            this.DateOfFormation = "19/08/1989";
+            this.Members = new List<Terrorist>();
+            this.CurrentCommander = null;
         }
         public void AddMember(Terrorist trr)
         {
             if (CurrentCommander == null || CurrentCommander.Rank < trr.Rank)
             {
-                _CurrentCommander = trr;
+                this.CurrentCommander = trr;
             }
-                _Members.Add(trr);
+                this.Members.Add(trr);
+        }
 
+        public void GetMembers()
+        {
+            foreach (Terrorist trr in Members)
+            {
+                trr.Info();
+            }
         }
     }
 }

@@ -33,6 +33,7 @@ namespace FirstStrike.Models
                 Console.WriteLine($"Officer -- Or Zellinger --\nFighter -- {Name} --\nExecuting Operation:\nUsing - {BombType[1]}, Time: {DateTime.Now}");
                 Console.WriteLine($"Target {terrorist.Name} -- Eliminated");
                 terrorist.UpdateStatus();
+                terrorist.Info();
             }
 
             else if (choice == 2)
@@ -42,6 +43,7 @@ namespace FirstStrike.Models
                 Console.WriteLine($"Officer -- Or Zellinger --\nFighter -- {Name} --\nExecuting Operation:\nUsing - {BombType[2]}, Time: {DateTime.Now}");
                 Console.WriteLine($"Target {terrorist.Name} -- Eliminated");
                 terrorist.UpdateStatus();
+                terrorist.Info();
             }
 
             else Console.WriteLine("Invalid Input");

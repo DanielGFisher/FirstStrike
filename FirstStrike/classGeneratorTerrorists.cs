@@ -5,23 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using FirstStrike.Models;
 
-namespace FirstStrike
+namespace FirstStrike.Models
 {
     public class GeneratorTerrorists
     {
-        static private List<string> _Names = new List<string> { "Mohamad", "Ziad", "Omar", "Abed", "Muafak", "Halal", "Hasan", "Imad" };
-        static public List<string> Names
-        {
-            get { return _Names; }
-            set { Names = value; }
-        }
+        static private List<string> Names = new List<string> { "Mohamad", "Ziad", "Omar", "Abed", "Muafak", "Halal", "Hasan", "Imad" };
 
-        static private List<string> _Weapons = new List<string> { "AK47", "M16", "Knife", "Rock", "Bomb", "Hands" };
-        static public List<string> Weapons
-        {
-            get { return _Weapons; }
-            set { Weapons = value; }
-        }
+        static private List<string> Weapons = new List<string> { "AK47", "M16", "Knife", "Gun"};
         public static Hamas GenerateTerrorists(int HowMany)
         {
             Hamas Organization = new Hamas();
@@ -34,14 +24,19 @@ namespace FirstStrike
                 bool alive = true;
 
                 List<string> weapons = new List<string>();int j = 0;
-                while (j > Weapons.Count)
+                int howweapons = Rand.Next(1, Weapons.Count-1);
+                while (j < howweapons)
                 {
                     string weapon = Weapons.ElementAt(Rand.Next(0, Weapons.Count));
                     if (weapons.Contains(weapon))
                     {
-                        i--; continue;
+                        j--; j--;
                     }
-                    weapons.Add(weapon);
+                    else
+                    {
+                        weapons.Add(weapon);
+                    }
+                    j++;
                 }
 
                 Terrorist trr = new Terrorist(name, rank, alive, weapons, place);

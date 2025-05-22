@@ -23,6 +23,7 @@ namespace FirstStrike.Models
 
         public override void StrikeOperation(Terrorist terrorist)
         {
+
             
             if (terrorist.Place == "Outside")
             {
@@ -30,6 +31,7 @@ namespace FirstStrike.Models
                 Console.WriteLine($"Officer -- Or Zellinger --\nDrone -- {Name} --\nExecuting Operation:\nUsing - {BombType[1]}, Place: {EffectiveAgainst[1]} Time: {DateTime.Now}");
                 Console.WriteLine($"Target {terrorist.Name} -- Eliminated");
                 terrorist.UpdateStatus();
+                terrorist.Info();
             }
 
             else if (terrorist.Place == "In A Car")
@@ -38,6 +40,7 @@ namespace FirstStrike.Models
                 Console.WriteLine($"Officer -- Or Zellinger --\nDrone -- {Name} --\nExecuting Operation:\nUsing - {BombType[2]}, Place: {EffectiveAgainst[2]} Time: {DateTime.Now}");
                 Console.WriteLine($"Target {terrorist.Name} -- Eliminated");
                 terrorist.UpdateStatus();
+                terrorist.Info();
             }
 
             else Console.WriteLine("Unsuitable type for strike");

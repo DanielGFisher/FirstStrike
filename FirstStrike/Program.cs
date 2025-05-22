@@ -7,7 +7,12 @@ namespace FirstStrike
     {
         public static void Main(string[] args)
         {
-            CommanderConsole.Menu();
+            IDF idf =  IDFGenerator.GenerateIDF();
+            Hamas hamas = GeneratorTerrorists.GenerateTerrorists(6);
+            Aman mossad = IDFGenerator.GenerateIntel(hamas);
+            CommanderConsole console = new CommanderConsole(idf, hamas, mossad);
+            hamas.GetMembers();
+            console.Menu();
         }
     }
 }

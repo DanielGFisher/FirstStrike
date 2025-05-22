@@ -8,7 +8,7 @@ namespace FirstStrike.Models
 {
     public class IDFGenerator
     {
-        public static void GenerateIDF()
+        public static IDF GenerateIDF()
         {
             IDF IsraeliDefenceForce = new IDF("May 26th, 1948","Eyal Zamir");
             string pilot = "Or Zelinger";
@@ -20,18 +20,19 @@ namespace FirstStrike.Models
             IsraeliDefenceForce.AddStrikeOption(F16);
             IsraeliDefenceForce.AddStrikeOption(Hermes);
             IsraeliDefenceForce.AddStrikeOption(M1902);
+            return IsraeliDefenceForce;
         }
 
-        public static void GenerateIntel(Hamas organisation)
+        public static Aman GenerateIntel(Hamas organisation)
         {
+            Aman Mossad = new Aman();
             for (int i = 0; i < 20; i++)
             {
                 Random rand = new Random();
-                int nextRand = rand.Next(0,organisation.Members.Count - 1);
-
-                Aman Mossad = new Aman();
+                int nextRand = rand.Next(0, organisation.Members.Count - 1);
                 Mossad.Intelligence(organisation.Members[nextRand]);
             }
+            return Mossad;
         }
 
     }

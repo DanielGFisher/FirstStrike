@@ -19,8 +19,21 @@ namespace FirstStrike.Models
             if (TerroristsIntelCount.ContainsKey(terrorist)) TerroristsIntelCount[terrorist]++;
             else TerroristsIntelCount[terrorist] = 1;
 
-            if (Intel.ContainsKey(terrorist)) if (!Intel[terrorist].Contains(discoveredIntel)) Intel[terrorist].Add(discoveredIntel); else Console.WriteLine("Intel already exists");
-            else Intel[terrorist] = new List<string> { discoveredIntel };  
+            if (Intel.ContainsKey(terrorist))
+            {
+                if (!Intel[terrorist].Contains(discoveredIntel))
+                {
+                    Intel[terrorist].Add(discoveredIntel);
+                }
+                else
+                {
+                    Console.WriteLine("Intel already exists");
+                }
+            }
+            else
+            {
+                Intel[terrorist] = new List<string> { discoveredIntel };
+            }
         }
 
         public Dictionary<Terrorist, int> DisplayIntelCount()
