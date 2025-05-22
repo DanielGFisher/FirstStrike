@@ -15,13 +15,44 @@ namespace FirstStrike.Models
         {
             BombType = "Explosive-Shells";
             EffectiveAgainst = "Open-Space";
-            StrikeCapacity = new List<int> {2, 3};
+            StrikeCapacity = new List<int> {1, 2, 3};
         }
 
-        public override void StrikeOperation()
+        public override void StrikeOperation(Terrorist terrorist)
         {
-            Console.WriteLine($"Drone -- {Name} --\nExecuting Operation:\nUsing - {BombType} -\nTarget struck successfully!");
-            AmmoCapacity--;
+            bool flag = true;
+            while (flag)
+            {
+                Console.WriteLine("Choose target count 1-3:");
+                    int choice = int.Parse(Console.ReadLine());
+
+                    switch (choice)
+                    {
+                        case 1:
+                        AmmoCapacity--;
+                        Console.WriteLine($"Officer -- Or Zellinger --\nArtillery -- {Name} --\nExecuting Operation:\nUsing - {BombType}, Time: {DateTime.Now}");
+                        terrorist.UpdateStatus();
+                        flag = false;
+                        break;
+
+                    case 2:
+                        AmmoCapacity -= 2;
+                        flag = false;
+                        terrorist.UpdateStatus();
+                        break;
+
+                    case 3:
+                        AmmoCapacity -= 3;
+                        flag = false;
+                        terrorist.UpdateStatus();
+                        break;
+                        
+                    default:
+                        Console.WriteLine("Please Enter a Valid Choice");
+                        break;
+            }
+            
+            }
         }
     }
 }

@@ -21,11 +21,26 @@ namespace FirstStrike.Models
             StrikeCapacity = AmmoCapacity;
         }
 
-        public override void StrikeOperation()
+        public override void StrikeOperation(Terrorist terrorist)
         {
-            Console.WriteLine($"Drone -- {Name} --\nExecuting Operation:\nTarget struck successfully!");
-            StrikeCapacity--;
-            FuelSupply -= 25;
+            
+            if (terrorist.Place == "Outside")
+            {
+                AmmoCapacity--;
+                Console.WriteLine($"Officer -- Or Zellinger --\nDrone -- {Name} --\nExecuting Operation:\nUsing - {BombType[1]}, Place: {EffectiveAgainst[1]} Time: {DateTime.Now}");
+                Console.WriteLine($"Target {terrorist.Name} -- Eliminated");
+                terrorist.UpdateStatus();
+            }
+
+            else if (terrorist.Place == "In A Car")
+            {
+                AmmoCapacity--;
+                Console.WriteLine($"Officer -- Or Zellinger --\nDrone -- {Name} --\nExecuting Operation:\nUsing - {BombType[2]}, Place: {EffectiveAgainst[2]} Time: {DateTime.Now}");
+                Console.WriteLine($"Target {terrorist.Name} -- Eliminated");
+                terrorist.UpdateStatus();
+            }
+
+            else Console.WriteLine("Unsuitable type for strike");
         }
 
         public void Refuel(double fuel)

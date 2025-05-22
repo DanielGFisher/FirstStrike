@@ -20,11 +20,31 @@ namespace FirstStrike.Models
             StrikeCapacity = 1;
         }
 
-        public override void StrikeOperation()
+        public override void StrikeOperation(Terrorist terrorist)
         {
-            Console.WriteLine($"Fighter -- {Name} -- Piloted by -- {Operator} --\nExecuting Operation:\nTarget struck successfully!");
-            AmmoCapacity--;
-            FuelSupply -= 50;
+            Console.WriteLine("Please choose bomb type: (1 - Tonne, 2 - Half-Tonne");
+            int choice = int.Parse(Console.ReadLine());
+
+
+            if (choice == 1)
+            {
+                FuelSupply -= 50;
+                AmmoCapacity--;
+                Console.WriteLine($"Officer -- Or Zellinger --\nFighter -- {Name} --\nExecuting Operation:\nUsing - {BombType[1]}, Time: {DateTime.Now}");
+                Console.WriteLine($"Target {terrorist.Name} -- Eliminated");
+                terrorist.UpdateStatus();
+            }
+
+            else if (choice == 2)
+            {
+                FuelSupply -= 50;
+                AmmoCapacity--;
+                Console.WriteLine($"Officer -- Or Zellinger --\nFighter -- {Name} --\nExecuting Operation:\nUsing - {BombType[2]}, Time: {DateTime.Now}");
+                Console.WriteLine($"Target {terrorist.Name} -- Eliminated");
+                terrorist.UpdateStatus();
+            }
+
+            else Console.WriteLine("Invalid Input");
         }
 
         public void Refuel(double fuel)

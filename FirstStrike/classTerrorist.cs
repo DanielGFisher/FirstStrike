@@ -89,5 +89,10 @@ namespace FirstStrike.Models
             Random Rand = new Random();
             _Place = Places.ElementAt(Rand.Next(0, Places.Count));
         }
+
+        public void UpdateStatus()
+        {
+            _Alive = false;
+        }
     }
 }
