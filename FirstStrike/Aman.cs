@@ -9,17 +9,29 @@ namespace FirstStrike.Models
 {
     public class Aman
     {
-        private Dictionary<Terrorist, int> Terrorists = new Dictionary<Terrorist, int>();
-        public static void Intelligence(Terrorist terrorist)
+        private Dictionary<Terrorist, int> TerroristsIntelCount = new Dictionary<Terrorist, int>();
+        private Dictionary<Terrorist, List<string>> Intel = new Dictionary<Terrorist, List<string>>();
+
+        public void Intelligence(Terrorist terrorist)
         {
-            Console.WriteLine($"Name: {terrorist.Name}\nRank: {terrorist.Rank}\nStatus: {terrorist.Alive}\nWeapons: {terrorist.GetWeapons()}\nTime: " + Convert.ToString(DateTime.Now));
+            string discoveredIntel = $"Name: {terrorist.Name}\nRank: {terrorist.Rank}\nStatus: {terrorist.Alive}\nWeapons: {terrorist.GetWeapons()}\nTime: {DateTime.Now}";
+
+            if (TerroristsIntelCount.ContainsKey(terrorist)) TerroristsIntelCount[terrorist]++;
+            else TerroristsIntelCount[terrorist] = 1;
+
+            if (Intel.ContainsKey(terrorist)) if (!Intel[terrorist].Contains(discoveredIntel)) Intel[terrorist].Add(discoveredIntel); else Console.WriteLine("Intel already exists");
+            else Intel[terrorist] = new List<string> { discoveredIntel };  
         }
 
-        public void TerroristList(Terrorist terrorist)
+        public Dictionary<Terrorist, int> DisplayIntelCount()
         {
-            if (Terrorists.ContainsKey(terrorist)) Terrorists[terrorist] += 1;
-            else Terrorists.Add(terrorist, 1);
+            return TerroristsIntelCount;
         }
+        public Dictionary<Terrorist, List<string>> IntelligenceDisplay()
+        {
+            return Intel;
+        }
+
 
     }
 }

@@ -23,5 +23,14 @@ namespace FirstStrike.Models
         {
             StrikeOptions.Add(warMachine);
         }
+
+        //public void Display()
+        //{
+        //    Console.WriteLine($"Date of Establishment: {DOE}\nChief of Staff: {CurrentCommander}");
+        //    foreach (var weapon in StrikeOptions)
+        //    {
+
+        //    }
+        //}
     }
 }

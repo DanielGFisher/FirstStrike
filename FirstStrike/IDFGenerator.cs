@@ -20,9 +20,19 @@ namespace FirstStrike.Models
             IsraeliDefenceForce.AddStrikeOption(F16);
             IsraeliDefenceForce.AddStrikeOption(Hermes);
             IsraeliDefenceForce.AddStrikeOption(M1902);
-
         }
 
+        public static void GenerateIntel(Hamas organisation)
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                Random rand = new Random();
+                int nextRand = rand.Next(0,organisation.Members.Count - 1);
+
+                Aman Mossad = new Aman();
+                Mossad.Intelligence(organisation.Members[nextRand]);
+            }
+        }
 
     }
 }
