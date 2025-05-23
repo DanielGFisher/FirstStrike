@@ -11,7 +11,6 @@ namespace FirstStrike
             Hamas hamas = GeneratorTerrorists.GenerateTerrorists(6);
             Aman mossad = IDFGenerator.GenerateIntel(hamas);
             CommanderConsole console = new CommanderConsole(idf, hamas, mossad);
-            hamas.GetMembers();
             console.Menu();
         }
     }

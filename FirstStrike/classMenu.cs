@@ -54,9 +54,9 @@ namespace FirstStrike.Models
                         sign = false;
                         break;
 
-                    //case 4:
-                    //    Exectution();
-                    //    break;
+                    case 4:
+                        Exectution(IntelAnalysis(this.Mossad));
+                        break;
                     default:
                         break;
                 }
@@ -66,7 +66,7 @@ namespace FirstStrike.Models
 
         int MaxCount = 0;
         List<Terrorist> HighestRisk = new List<Terrorist>();
-        public void IntelAnalysis(Aman intelligence)
+        public List<Terrorist> IntelAnalysis(Aman intelligence)
         {
             Dictionary<Terrorist, int> IntelCount = intelligence.DisplayIntelCount();
 
@@ -89,6 +89,7 @@ namespace FirstStrike.Models
             {
                 terrorist.Info();
             }
+            return HighestRisk;
         }
         public void MostDangerousTerrorist(Hamas Organization)
         {
