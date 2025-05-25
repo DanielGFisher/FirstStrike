@@ -35,7 +35,12 @@ namespace FirstStrike.Models
                   "   Determine the most dangerous terrorist based on a quality rank\n\n" +
                   "4. Strike Execution\n" +
                   "   Based on the terrorist's location and type, choose an appropriate strike unit");
-                int choice = int.Parse(Console.ReadLine());
+                bool choiceSign = int.TryParse(Console.ReadLine(), out int choice);
+                if (!choiceSign)
+                {
+                    Console.WriteLine("Enter choice again");
+                    continue;
+                }
                 switch (choice)
                 {
                     case 1:
