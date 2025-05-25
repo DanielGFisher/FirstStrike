@@ -34,7 +34,10 @@ namespace FirstStrike.Models
                   "3. Target Prioritization\n" +
                   "   Determine the most dangerous terrorist based on a quality rank\n\n" +
                   "4. Strike Execution\n" +
-                  "   Based on the terrorist's location and type, choose an appropriate strike unit");
+                  "   Based on the terrorist's location and type, choose an appropriate strike unit \n\n" +
+                  "5. Exit the Program\n" +
+                  "   Finish program use and exit the panel");
+
                 int choice = int.Parse(Console.ReadLine());
                 switch (choice)
                 {
@@ -81,7 +84,7 @@ namespace FirstStrike.Models
             {
                 if (IntelCount.ContainsKey(terroristIntel.Key) && IntelCount[terroristIntel.Key] == MaxCount)
                 {
-                    HighestRisk.Add(terroristIntel.Key);
+                    if (!HighestRisk.Contains(terroristIntel.Key)) HighestRisk.Add(terroristIntel.Key);
                 }
             }
 
