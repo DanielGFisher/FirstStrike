@@ -30,7 +30,7 @@ namespace FirstStrike.Models
                     string weapon = Weapons.ElementAt(Rand.Next(0, Weapons.Count));
                     if (weapons.Contains(weapon))
                     {
-                        j--; j--;
+                        j--;
                     }
                     else
                     {

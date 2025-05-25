@@ -81,7 +81,7 @@ namespace FirstStrike.Models
 
             foreach (KeyValuePair<Terrorist, int> Terrorist in IntelCount)
             {
-                if (Terrorist.Value > MaxCount) MaxCount = Terrorist.Value;
+                if (Terrorist.Key.Alive && Terrorist.Value > MaxCount) MaxCount = Terrorist.Value;
             }
 
             Dictionary<Terrorist, List<string>> Intel = intelligence.IntelligenceDisplay();
@@ -223,6 +223,11 @@ namespace FirstStrike.Models
             }
             else
             {
+                if (trrs.Count == 0)
+                {
+                    Console.WriteLine("List is Empty");
+                    return;
+                }
                 Terrorist trr = trrs[0];
                 switch (trr.Place)
                 {

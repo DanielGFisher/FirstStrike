@@ -64,10 +64,10 @@ namespace FirstStrike.Models
 
         public void Info()
         {
-            Console.WriteLine($"Name: {Name}\nRank: {Rank}\nAlive: {Alive}\nWeapons:");
+            Console.WriteLine($"Name: {Name}\nRank: {Rank}\nPlace: {Place}\nAlive: {Alive}\nWeapons:");
             foreach (string weapon in Weapons)
             {
-                Console.WriteLine($"    {weapon}");
+                Console.WriteLine($"{weapon}");
             }
         }
         public string GetWeapons()

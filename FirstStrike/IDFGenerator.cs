@@ -26,9 +26,9 @@ namespace FirstStrike.Models
         public static Aman GenerateIntel(Hamas organisation)
         {
             Aman Mossad = new Aman();
+            Random rand = new Random();
             for (int i = 0; i < 20; i++)
             {
-                Random rand = new Random();
                 int nextRand = rand.Next(0, organisation.Members.Count - 1);
                 Mossad.Intelligence(organisation.Members[nextRand]);
             }
