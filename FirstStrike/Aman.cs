@@ -25,10 +25,6 @@ namespace FirstStrike.Models
                 {
                     Intel[terrorist].Add(discoveredIntel);
                 }
-                else
-                {
-                    Console.WriteLine("Intel already exists");
-                }
             }
             else
             {
