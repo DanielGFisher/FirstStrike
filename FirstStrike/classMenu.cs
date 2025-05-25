@@ -72,10 +72,11 @@ namespace FirstStrike.Models
             while (sign);
         }
 
-        int MaxCount = 0;
+
         List<Terrorist> HighestRisk = new List<Terrorist>();
         public List<Terrorist> IntelAnalysis(Aman intelligence)
         {
+            int MaxCount = 0;
             Dictionary<Terrorist, int> IntelCount = intelligence.DisplayIntelCount();
 
             foreach (KeyValuePair<Terrorist, int> Terrorist in IntelCount)
@@ -89,7 +90,7 @@ namespace FirstStrike.Models
             {
                 if (IntelCount.ContainsKey(terroristIntel.Key) && IntelCount[terroristIntel.Key] == MaxCount)
                 {
-                    if (!HighestRisk.Contains(terroristIntel.Key)) HighestRisk.Add(terroristIntel.Key);
+                    if (!HighestRisk.Contains(terroristIntel.Key) && terroristIntel.Key.Alive) HighestRisk.Add(terroristIntel.Key);
                 }
             }
 
@@ -236,6 +237,14 @@ namespace FirstStrike.Models
                         break;
                     default:
                         break;
+                }
+            }
+            Terrorist[] copytrrs = trrs.ToArray();
+            foreach (Terrorist trr in copytrrs)
+            {
+                if (trr.Alive == false)
+                {
+                    trrs.Remove(trr);
                 }
             }
         }
