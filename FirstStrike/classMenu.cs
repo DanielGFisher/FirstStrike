@@ -38,7 +38,6 @@ namespace FirstStrike.Models
                   "5. Exit the Program\n" +
                   "   Finish program use and exit the panel");
 
-                int choice = int.Parse(Console.ReadLine());
                 bool choiceSign = int.TryParse(Console.ReadLine(), out int choice);
                 if (!choiceSign)
                 {
