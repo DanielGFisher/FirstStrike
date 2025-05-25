@@ -28,7 +28,7 @@ namespace FirstStrike.Models
             if (terrorist.Place == "Outside")
             {
                 AmmoCapacity--;
-                Console.WriteLine($"Officer -- Or Zellinger --\nDrone -- {Name} --\nExecuting Operation:\nUsing - {BombType[1]}, Place: {EffectiveAgainst[1]} Time: {DateTime.Now}");
+                Console.WriteLine($"Officer -- Or Zellinger --\nDrone -- {Name} --\nExecuting Operation:\nUsing - {BombType[0]}, Place: {EffectiveAgainst[0]} Time: {DateTime.Now}");
                 Console.WriteLine($"Target {terrorist.Name} -- Eliminated");
                 terrorist.UpdateStatus();
                 terrorist.Info();
@@ -37,7 +37,7 @@ namespace FirstStrike.Models
             else if (terrorist.Place == "In A Car")
             {
                 AmmoCapacity--;
-                Console.WriteLine($"Officer -- Or Zellinger --\nDrone -- {Name} --\nExecuting Operation:\nUsing - {BombType[2]}, Place: {EffectiveAgainst[2]} Time: {DateTime.Now}");
+                Console.WriteLine($"Officer -- Or Zellinger --\nDrone -- {Name} --\nExecuting Operation:\nUsing - {BombType[1]}, Place: {EffectiveAgainst[1]} Time: {DateTime.Now}");
                 Console.WriteLine($"Target {terrorist.Name} -- Eliminated");
                 terrorist.UpdateStatus();
                 terrorist.Info();

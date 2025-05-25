@@ -22,7 +22,7 @@ namespace FirstStrike.Models
 
         public override void StrikeOperation(Terrorist terrorist)
         {
-            Console.WriteLine("Please choose bomb type: (1 - Tonne, 2 - Half-Tonne");
+            Console.WriteLine("Please choose bomb type: (1 - Tonne, 2 - Half-Tonne)");
             int choice = int.Parse(Console.ReadLine());
 
 
@@ -30,7 +30,7 @@ namespace FirstStrike.Models
             {
                 FuelSupply -= 50;
                 AmmoCapacity--;
-                Console.WriteLine($"Officer -- Or Zellinger --\nFighter -- {Name} --\nExecuting Operation:\nUsing - {BombType[1]}, Time: {DateTime.Now}");
+                Console.WriteLine($"Officer -- Or Zellinger --\nFighter -- {Name} --\nExecuting Operation:\nUsing - {BombType[0]}, Time: {DateTime.Now}");
                 Console.WriteLine($"Target {terrorist.Name} -- Eliminated");
                 terrorist.UpdateStatus();
                 terrorist.Info();
@@ -40,7 +40,7 @@ namespace FirstStrike.Models
             {
                 FuelSupply -= 50;
                 AmmoCapacity--;
-                Console.WriteLine($"Officer -- Or Zellinger --\nFighter -- {Name} --\nExecuting Operation:\nUsing - {BombType[2]}, Time: {DateTime.Now}");
+                Console.WriteLine($"Officer -- Or Zellinger --\nFighter -- {Name} --\nExecuting Operation:\nUsing - {BombType[1]}, Time: {DateTime.Now}");
                 Console.WriteLine($"Target {terrorist.Name} -- Eliminated");
                 terrorist.UpdateStatus();
                 terrorist.Info();
